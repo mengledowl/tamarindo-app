@@ -1,5 +1,4 @@
 class LogonPixel
-
   def initialize(app)
     @app = app
   end
@@ -17,14 +16,11 @@ class LogonPixel
 
       Rails.logger.info details_hash
 
-      client = Savon.client(wsdl: Rails.root.join('app', 'middleware', 'logon_wsdl.xml'), proxy: ENV['FIXIE_URL'])
-
-      # todo: pass order details to logon
+      Order::Logon.send_order_details(details_hash)
       [ 200, { 'Content-Type' => 'image/png' }, [ File.read(File.join(File.dirname(__FILE__), 'slp.png')) ] ]
     else
       Rails.logger.send(:info, "MIDDLEWARE FOR APP")
       @app.call(env)
     end
   end
-
 end

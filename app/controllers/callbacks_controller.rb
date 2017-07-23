@@ -1,9 +1,6 @@
 class CallbacksController < ApplicationController
   def update_variant_quantity
-    variant = ShopifyAPI::Variant.find(params[:id])
-    variant.inventory_quantity = params[:quantity]
-
-    if variant.save
+    if Order::Shopify.update_variant_quantity(params[:id], params[:quantity])
       head 200
     else
       head 500
