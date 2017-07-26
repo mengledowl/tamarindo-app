@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   post :update_variant_quantity, to: 'callbacks#update_variant_quantity'
 
-  get :show_quantity, to: 'product_variants#show_quantity'
+  resources :logon_ats, only: :show
 end
