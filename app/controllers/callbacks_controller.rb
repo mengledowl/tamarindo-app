@@ -1,6 +1,6 @@
 class CallbacksController < ApplicationController
   def update_variant_quantity
-    if Order::Shopify.update_variant_quantity(params[:id], params[:quantity])
+    if Shopify.update_variant_quantity(params[:id], params[:quantity])
       head 200
     else
       head 500
