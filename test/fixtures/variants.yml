@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shopify_variant_id: 1
+  logon_style: MyText
+  logon_col: MyText
+  logon_dm: MyText
+  logon_size: MyText
+
+two:
+  shopify_variant_id: 1
+  logon_style: MyText
+  logon_col: MyText
+  logon_dm: MyText
+  logon_size: MyText
