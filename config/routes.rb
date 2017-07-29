@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   resources :logon_ats, only: :show
 
-  post :shopify_webhook, to: 'shopify_webhook#order_created'
+  post :shopify_order_created, to: 'shopify_webhook#order_created'
 end
