@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728011841) do
+ActiveRecord::Schema.define(version: 20170729200906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "variants", force: :cascade do |t|
-    t.integer "shopify_variant_id"
+    t.string "shopify_variant_id"
     t.text "logon_style"
     t.text "logon_col"
     t.text "logon_dm"
