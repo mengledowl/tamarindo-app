@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   post :update_variant_quantity, to: 'callbacks#update_variant_quantity'
 
   resources :logon_ats, only: :show
+
+  post :shopify_webhook, to: 'shopify_webhook#order_created'
 end

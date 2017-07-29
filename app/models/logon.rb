@@ -7,8 +7,33 @@ module Logon
     end
 
     def send_order_details(details)
-      # todo: make this actually send details
-      # sounds like we will likely be using putorder to do this?
+      # todo: make this actually send details - currently getting timeouts from LogOn so can't verify
+
+      items = details[:line_items].map do |line_item|
+        Variant.find_by(shopify_variant_id: line_item[:variant_id]).to_putorder_format(line_item[:quantity])
+      end
+
+      header = {
+          shiptocontact: details.dig(:shipping_address, :name),
+          shiptoaddress1: details.dig(:shipping_address, :address1),
+          shiptoaddress2: details.dig(:shipping_address, :address2),
+          shiptocity: details.dig(:shipping_address, :city),
+          shiptostate: details.dig(:shipping_address, :province_code),
+          shiptozip: details.dig(:shipping_address, :zip),
+          shiptocountry: details.dig(:shipping_address, :country_code),
+          shiptophone: details.dig(:shipping_address, :phone),
+          shiptoemail: details.dig(:customer, :email),
+          shipvia: details.dig(:shipping_lines)&.first&.dig(:code)
+      }
+
+      message = {
+          header: header,
+          detail: {
+              item: items
+          }
+      }
+
+      client.call(:putorder, message: message)
     end
 
     def client
