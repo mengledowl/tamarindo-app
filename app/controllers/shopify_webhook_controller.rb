@@ -1,7 +1,4 @@
 class ShopifyWebhookController < ApplicationController
-  # todo: might want to store the order id so we know we've already gotten this create and don't do it multiple times if
-  # shopify sends it to us more than once
-
   # todo: might also need to move the actual logic out into a background job of some kind b/c we only have 5 sec
   # to respond with a 200 before Shopify marks it as failed and starts retrying. Don't want to risk LogOn being slow
 
