@@ -9,10 +9,12 @@ class ShopifyWebhookController < ApplicationController
 
     event = OrderEvent.create!(shopify_order_id: params[:id])
 
-    # will raise an error if it fails for some reason which means we won't set processed: true which is what we want
-    Logon.send_order_details(params)
+    ProcessOrderEventWorker.perform_async(event.id)
 
-    event.update(processed: true)
+    # will raise an error if it fails for some reason which means we won't set processed: true which is what we want
+    # Logon.send_order_details(params)
+    #
+    # event.update(processed: true)
 
     head 200
   end

@@ -7,8 +7,12 @@ module Logon
     end
 
     def send_order_details(details)
-      # todo: make this actually send details - currently getting timeouts from LogOn so can't verify
+      # todo: make this actually send details - currently getting errors from LogOn
 
+      client.call(:putorder, message: prepare_order_details(details))
+    end
+
+    def prepare_order_details(details)
       items = details[:line_items].map do |line_item|
         Variant.find_by(shopify_variant_id: line_item[:variant_id]).to_putorder_format(line_item[:quantity])
       end
@@ -26,14 +30,12 @@ module Logon
           shipvia: details.dig(:shipping_lines)&.first&.dig(:code)
       }
 
-      message = {
+      {
           header: header,
           detail: {
               item: items
           }
       }
-
-      client.call(:putorder, message: message)
     end
 
     def client
