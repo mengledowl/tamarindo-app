@@ -37,7 +37,7 @@ module Logon
     end
 
     def client
-      @client ||= Savon.client(wsdl: Rails.root.join('app', 'middleware', 'logon_wsdl.xml'),
+      @client ||= Savon.client(wsdl: Rails.root.join('vendor', 'logon', 'logon_wsdl.xml'),
                                proxy: ENV['FIXIE_URL'], endpoint: "http://asp.logonsystems.com:8110/b2c", log: true,
                                pretty_print_xml: true, namespace: "http://asp.logonsystems.com/b2c")
     end
