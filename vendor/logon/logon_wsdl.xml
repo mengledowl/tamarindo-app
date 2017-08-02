@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
-<!-- Generated 2011-09-07 07:16:27 by Four J's WSDL File Generator, Build 239 -->
-<definitions xmlns:fjs="http://asp.logonsystems.com/" xmlns:fjsd="http://asp.logonsystems.com/types/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="b2c" targetNamespace="http://asp.logonsystems.com/">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!--Generated 2017-04-11 15:26:17 by Four J's WSDL File Generator, Build 239-->
+<definitions name="b2c" targetNamespace="http://asp.logonsystems.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:fjs="http://asp.logonsystems.com/" xmlns:fjsd="http://asp.logonsystems.com/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <types>
-    <schema targetNamespace="http://asp.logonsystems.com/types/">
+    <schema targetNamespace="http://asp.logonsystems.com/types/" xmlns="http://www.w3.org/2001/XMLSchema">
       <simpleType name="accountlogin_uid_in_FGLString">
         <restriction base="string">
           <maxLength value="40"/>
@@ -111,7 +111,7 @@
           <element name="when" type="fjsd:ats_rec_out_when_FGLString"/>
           <element name="wcode" type="fjsd:ats_rec_out_wcode_FGLString"/>
           <element name="quantity" type="int"/>
-          <element name="sindex" type="short"/>
+          <element name="sindex" type="int"/>
         </sequence>
       </complexType>
       <complexType name="ArrayOfats_rec_out_ats_rec_out">
@@ -121,6 +121,92 @@
               <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:ats_rec_out"/>
             </sequence>
             <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:ats_rec_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="bulkats_style_in_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_col_in_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_dm_in_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_size_in_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_when_in_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_wcode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_ccode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_bulkonly_in_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_rec_out_col_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_rec_out_dm_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_rec_out_size_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_rec_out_when_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="bulkats_rec_out_wcode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <complexType name="bulkats_rec_out">
+        <sequence>
+          <element name="col" type="fjsd:bulkats_rec_out_col_FGLString"/>
+          <element name="dm" type="fjsd:bulkats_rec_out_dm_FGLString"/>
+          <element name="size" type="fjsd:bulkats_rec_out_size_FGLString"/>
+          <element name="when" type="fjsd:bulkats_rec_out_when_FGLString"/>
+          <element name="wcode" type="fjsd:bulkats_rec_out_wcode_FGLString"/>
+          <element name="quantity" type="int"/>
+          <element name="sindex" type="int"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfbulkats_rec_out_bulkats_rec_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:bulkats_rec_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:bulkats_rec_out[]"/>
           </restriction>
         </complexContent>
       </complexType>
@@ -264,6 +350,369 @@
           </restriction>
         </complexContent>
       </complexType>
+      <simpleType name="entity_rec_in_header_action_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_ccode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_cext_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_company_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_address1_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_address2_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_city_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_state_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_zip_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_phone_FGLString">
+        <restriction base="string">
+          <maxLength value="14"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_fax_FGLString">
+        <restriction base="string">
+          <maxLength value="14"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_country_FGLString">
+        <restriction base="string">
+          <maxLength value="15"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_business_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_note_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_mailcode_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_header_astatus_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <complexType name="entity_rec_in_header">
+        <sequence>
+          <element name="action" type="fjsd:entity_rec_in_header_action_FGLString"/>
+          <element name="ccode" type="fjsd:entity_rec_in_header_ccode_FGLString"/>
+          <element name="cext" type="fjsd:entity_rec_in_header_cext_FGLString"/>
+          <element name="company" type="fjsd:entity_rec_in_header_company_FGLString"/>
+          <element name="address1" type="fjsd:entity_rec_in_header_address1_FGLString"/>
+          <element name="address2" type="fjsd:entity_rec_in_header_address2_FGLString"/>
+          <element name="city" type="fjsd:entity_rec_in_header_city_FGLString"/>
+          <element name="state" type="fjsd:entity_rec_in_header_state_FGLString"/>
+          <element name="zip" type="fjsd:entity_rec_in_header_zip_FGLString"/>
+          <element name="phone" type="fjsd:entity_rec_in_header_phone_FGLString"/>
+          <element name="fax" type="fjsd:entity_rec_in_header_fax_FGLString"/>
+          <element name="country" type="fjsd:entity_rec_in_header_country_FGLString"/>
+          <element name="business" type="fjsd:entity_rec_in_header_business_FGLString"/>
+          <element name="note" type="fjsd:entity_rec_in_header_note_FGLString"/>
+          <element name="mailcode" type="fjsd:entity_rec_in_header_mailcode_FGLString"/>
+          <element name="astatus" type="fjsd:entity_rec_in_header_astatus_FGLString"/>
+        </sequence>
+      </complexType>
+      <simpleType name="entity_rec_in_detail_action_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_customertype_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_subtype_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_buyinggroup_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_buyingmember_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_vendornum_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_defaultbillto_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_defaultshipto_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_termscode_FGLString">
+        <restriction base="string">
+          <maxLength value="4"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_termstype_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_pricetype_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_discount_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="6"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_warehousecode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_billfreight_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_shipvia_FGLString">
+        <restriction base="string">
+          <maxLength value="15"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_duns_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_division_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_currency_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_agency_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_salesman1_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_salesman2_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_note_FGLString">
+        <restriction base="string">
+          <maxLength value="256"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_finc_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="6"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_arstm_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_disc_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="6"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_fcharge_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="5"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_factornum_FGLString">
+        <restriction base="string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_expdate_FGLString">
+        <restriction base="string">
+          <maxLength value="4"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_detail_qs_FGLString">
+        <restriction base="string">
+          <maxLength value="1024"/>
+        </restriction>
+      </simpleType>
+      <complexType name="entity_rec_in_detail">
+        <sequence>
+          <element name="action" type="fjsd:entity_rec_in_detail_action_FGLString"/>
+          <element name="customertype" type="fjsd:entity_rec_in_detail_customertype_FGLString"/>
+          <element name="subtype" type="fjsd:entity_rec_in_detail_subtype_FGLString"/>
+          <element name="buyinggroup" type="fjsd:entity_rec_in_detail_buyinggroup_FGLString"/>
+          <element name="buyingmember" type="fjsd:entity_rec_in_detail_buyingmember_FGLString"/>
+          <element name="vendornum" type="fjsd:entity_rec_in_detail_vendornum_FGLString"/>
+          <element name="defaultbillto" type="fjsd:entity_rec_in_detail_defaultbillto_FGLString"/>
+          <element name="defaultshipto" type="fjsd:entity_rec_in_detail_defaultshipto_FGLString"/>
+          <element name="termscode" type="fjsd:entity_rec_in_detail_termscode_FGLString"/>
+          <element name="termstype" type="fjsd:entity_rec_in_detail_termstype_FGLString"/>
+          <element name="pricetype" type="fjsd:entity_rec_in_detail_pricetype_FGLString"/>
+          <element name="discount" type="fjsd:entity_rec_in_detail_discount_FGLDecimal"/>
+          <element name="warehousecode" type="fjsd:entity_rec_in_detail_warehousecode_FGLString"/>
+          <element name="billfreight" type="fjsd:entity_rec_in_detail_billfreight_FGLString"/>
+          <element name="shipvia" type="fjsd:entity_rec_in_detail_shipvia_FGLString"/>
+          <element name="duns" type="fjsd:entity_rec_in_detail_duns_FGLString"/>
+          <element name="division" type="fjsd:entity_rec_in_detail_division_FGLString"/>
+          <element name="currency" type="fjsd:entity_rec_in_detail_currency_FGLString"/>
+          <element name="agency" type="fjsd:entity_rec_in_detail_agency_FGLString"/>
+          <element name="salesman1" type="fjsd:entity_rec_in_detail_salesman1_FGLString"/>
+          <element name="salesman2" type="fjsd:entity_rec_in_detail_salesman2_FGLString"/>
+          <element name="note" type="fjsd:entity_rec_in_detail_note_FGLString"/>
+          <element name="lpercent" type="short"/>
+          <element name="opercent" type="short"/>
+          <element name="finc" type="fjsd:entity_rec_in_detail_finc_FGLDecimal"/>
+          <element name="arstm" type="fjsd:entity_rec_in_detail_arstm_FGLString"/>
+          <element name="disc" type="fjsd:entity_rec_in_detail_disc_FGLDecimal"/>
+          <element name="fcharge" type="fjsd:entity_rec_in_detail_fcharge_FGLDecimal"/>
+          <element name="factornum" type="fjsd:entity_rec_in_detail_factornum_FGLString"/>
+          <element name="expdate" type="fjsd:entity_rec_in_detail_expdate_FGLString"/>
+          <element name="qs" type="fjsd:entity_rec_in_detail_qs_FGLString"/>
+        </sequence>
+      </complexType>
+      <simpleType name="entity_rec_in_contact_action_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_contact_contact_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_contact_title_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_contact_dept_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_contact_phone_FGLString">
+        <restriction base="string">
+          <maxLength value="14"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_contact_email_FGLString">
+        <restriction base="string">
+          <maxLength value="40"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_contact_userid_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_rec_in_contact_passwd_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <complexType name="entity_rec_in_contact">
+        <sequence>
+          <element name="action" type="fjsd:entity_rec_in_contact_action_FGLString"/>
+          <element name="contact" type="fjsd:entity_rec_in_contact_contact_FGLString"/>
+          <element name="title" type="fjsd:entity_rec_in_contact_title_FGLString"/>
+          <element name="dept" type="fjsd:entity_rec_in_contact_dept_FGLString"/>
+          <element name="phone" type="fjsd:entity_rec_in_contact_phone_FGLString"/>
+          <element name="email" type="fjsd:entity_rec_in_contact_email_FGLString"/>
+          <element name="userid" type="fjsd:entity_rec_in_contact_userid_FGLString"/>
+          <element name="passwd" type="fjsd:entity_rec_in_contact_passwd_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfentity_rec_in_contact_entity_rec_in_contact">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:entity_rec_in_contact"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:entity_rec_in_contact[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="entity_rec_in">
+        <sequence>
+          <element name="header" type="fjsd:entity_rec_in_header"/>
+          <element name="detail" type="fjsd:entity_rec_in_detail"/>
+          <element name="contact" type="fjsd:ArrayOfentity_rec_in_contact_entity_rec_in_contact"/>
+        </sequence>
+      </complexType>
+      <simpleType name="entity_errormsg_out_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="entity_ccode_out_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
       <simpleType name="forgotpassword_ccode_in_FGLString">
         <restriction base="string">
           <maxLength value="8"/>
@@ -392,6 +841,107 @@
           </restriction>
         </complexContent>
       </complexType>
+      <simpleType name="getcustomerprojection_salesman_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_ccode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_cext_in_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_gcode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_scode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_style_in_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_header_out_errormsg_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getcustomerprojection_header_out">
+        <sequence>
+          <element name="sts" type="int"/>
+          <element name="errormsg" type="fjsd:getcustomerprojection_header_out_errormsg_FGLString"/>
+          <element name="records" type="int"/>
+        </sequence>
+      </complexType>
+      <simpleType name="getcustomerprojection_detail_out_ccode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_detail_out_cext_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_detail_out_gcode_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_detail_out_scode_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_detail_out_style_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_detail_out_amount_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getcustomerprojection_detail_out_allowedit_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getcustomerprojection_detail_out">
+        <sequence>
+          <element name="ccode" type="fjsd:getcustomerprojection_detail_out_ccode_FGLString"/>
+          <element name="cext" type="fjsd:getcustomerprojection_detail_out_cext_FGLString"/>
+          <element name="gcode" type="fjsd:getcustomerprojection_detail_out_gcode_FGLString"/>
+          <element name="scode" type="fjsd:getcustomerprojection_detail_out_scode_FGLString"/>
+          <element name="style" type="fjsd:getcustomerprojection_detail_out_style_FGLString"/>
+          <element name="yr" type="short"/>
+          <element name="mo" type="short"/>
+          <element name="units" type="short"/>
+          <element name="amount" type="fjsd:getcustomerprojection_detail_out_amount_FGLString"/>
+          <element name="allowedit" type="fjsd:getcustomerprojection_detail_out_allowedit_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfgetcustomerprojection_detail_out_getcustomerprojection_detail_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:getcustomerprojection_detail_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:getcustomerprojection_detail_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
       <simpleType name="getorderdetail_rec_out_style_FGLString">
         <restriction base="string">
           <maxLength value="12"/>
@@ -420,7 +970,7 @@
       </simpleType>
       <simpleType name="getorderdetail_rec_out_tracknum_FGLString">
         <restriction base="string">
-          <maxLength value="20"/>
+          <maxLength value="30"/>
         </restriction>
       </simpleType>
       <simpleType name="getorderdetail_rec_out_linestatus_FGLString">
@@ -456,6 +1006,79 @@
               <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:getorderdetail_rec_out"/>
             </sequence>
             <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:getorderdetail_rec_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="getorderdetail2_rec_out_style_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderdetail2_rec_out_stylename_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderdetail2_rec_out_col_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderdetail2_rec_out_dm_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderdetail2_rec_out_size_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderdetail2_rec_out_unitprice_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="8"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderdetail2_rec_out_tracknum_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderdetail2_rec_out_linestatus_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderdetail2_rec_out_reference_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getorderdetail2_rec_out">
+        <sequence>
+          <element name="style" type="fjsd:getorderdetail2_rec_out_style_FGLString"/>
+          <element name="stylename" type="fjsd:getorderdetail2_rec_out_stylename_FGLString"/>
+          <element name="col" type="fjsd:getorderdetail2_rec_out_col_FGLString"/>
+          <element name="dm" type="fjsd:getorderdetail2_rec_out_dm_FGLString"/>
+          <element name="size" type="fjsd:getorderdetail2_rec_out_size_FGLString"/>
+          <element name="quantity" type="int"/>
+          <element name="unitprice" type="fjsd:getorderdetail2_rec_out_unitprice_FGLDecimal"/>
+          <element name="shipped" type="int"/>
+          <element name="shipdate" type="date"/>
+          <element name="tracknum" type="fjsd:getorderdetail2_rec_out_tracknum_FGLString"/>
+          <element name="invnum" type="int"/>
+          <element name="linestatus" type="fjsd:getorderdetail2_rec_out_linestatus_FGLString"/>
+          <element name="reference" type="fjsd:getorderdetail2_rec_out_reference_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfgetorderdetail2_rec_out_getorderdetail2_rec_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:getorderdetail2_rec_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:getorderdetail2_rec_out[]"/>
           </restriction>
         </complexContent>
       </complexType>
@@ -538,7 +1161,7 @@
       </simpleType>
       <simpleType name="getorderheader_rec_out_msg_FGLString">
         <restriction base="string">
-          <maxLength value="60"/>
+          <maxLength value="120"/>
         </restriction>
       </simpleType>
       <simpleType name="getorderheader_rec_out_currency_FGLString">
@@ -568,6 +1191,137 @@
           <element name="note" type="fjsd:getorderheader_rec_out_note_FGLString"/>
           <element name="msg" type="fjsd:getorderheader_rec_out_msg_FGLString"/>
           <element name="currency" type="fjsd:getorderheader_rec_out_currency_FGLString"/>
+        </sequence>
+      </complexType>
+      <simpleType name="getorderheader2_rec_out_billtoccode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_billtocext_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shiptocompany_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shiptoaddress1_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shiptoaddress2_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shiptocity_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shiptostate_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shiptozip_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shiptocountry_FGLString">
+        <restriction base="string">
+          <maxLength value="15"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shiptophone_FGLString">
+        <restriction base="string">
+          <maxLength value="14"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shiptoemail_FGLString">
+        <restriction base="string">
+          <maxLength value="40"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_shipvia_FGLString">
+        <restriction base="string">
+          <maxLength value="15"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_freight_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="8"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_tax_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="8"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_note_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_msg_FGLString">
+        <restriction base="string">
+          <maxLength value="120"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_currency_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_ponum_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_cc_amount_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getorderheader2_rec_out_gc_amount_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getorderheader2_rec_out">
+        <sequence>
+          <element name="ordnum" type="int"/>
+          <element name="orddate" type="date"/>
+          <element name="billtoccode" type="fjsd:getorderheader2_rec_out_billtoccode_FGLString"/>
+          <element name="billtocext" type="fjsd:getorderheader2_rec_out_billtocext_FGLString"/>
+          <element name="shiptocompany" type="fjsd:getorderheader2_rec_out_shiptocompany_FGLString"/>
+          <element name="shiptoaddress1" type="fjsd:getorderheader2_rec_out_shiptoaddress1_FGLString"/>
+          <element name="shiptoaddress2" type="fjsd:getorderheader2_rec_out_shiptoaddress2_FGLString"/>
+          <element name="shiptocity" type="fjsd:getorderheader2_rec_out_shiptocity_FGLString"/>
+          <element name="shiptostate" type="fjsd:getorderheader2_rec_out_shiptostate_FGLString"/>
+          <element name="shiptozip" type="fjsd:getorderheader2_rec_out_shiptozip_FGLString"/>
+          <element name="shiptocountry" type="fjsd:getorderheader2_rec_out_shiptocountry_FGLString"/>
+          <element name="shiptophone" type="fjsd:getorderheader2_rec_out_shiptophone_FGLString"/>
+          <element name="shiptoemail" type="fjsd:getorderheader2_rec_out_shiptoemail_FGLString"/>
+          <element name="shipdate" type="date"/>
+          <element name="shipvia" type="fjsd:getorderheader2_rec_out_shipvia_FGLString"/>
+          <element name="freight" type="fjsd:getorderheader2_rec_out_freight_FGLDecimal"/>
+          <element name="tax" type="fjsd:getorderheader2_rec_out_tax_FGLDecimal"/>
+          <element name="note" type="fjsd:getorderheader2_rec_out_note_FGLString"/>
+          <element name="msg" type="fjsd:getorderheader2_rec_out_msg_FGLString"/>
+          <element name="currency" type="fjsd:getorderheader2_rec_out_currency_FGLString"/>
+          <element name="ponum" type="fjsd:getorderheader2_rec_out_ponum_FGLString"/>
+          <element name="cc_amount" type="fjsd:getorderheader2_rec_out_cc_amount_FGLDecimal"/>
+          <element name="gc_amount" type="fjsd:getorderheader2_rec_out_gc_amount_FGLDecimal"/>
         </sequence>
       </complexType>
       <simpleType name="getorders_ccode_in_FGLString">
@@ -616,12 +1370,12 @@
       </simpleType>
       <simpleType name="getra_header_out_note_FGLString">
         <restriction base="string">
-          <maxLength value="60"/>
+          <maxLength value="200"/>
         </restriction>
       </simpleType>
       <simpleType name="getra_header_out_internalnote_FGLString">
         <restriction base="string">
-          <maxLength value="60"/>
+          <maxLength value="200"/>
         </restriction>
       </simpleType>
       <complexType name="getra_header_out">
@@ -681,6 +1435,226 @@
           </restriction>
         </complexContent>
       </complexType>
+      <simpleType name="getretailerwithsku_division_in_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_season_in_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_group_in_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_category_in_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_itemtype_in_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_ccode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_custtype_in_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_custsubtype_in_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_sotype_in_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_style_in_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_col_in_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_query_in_FGLString">
+        <restriction base="string">
+          <maxLength value="1024"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_header_out_errormsg_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getretailerwithsku_header_out">
+        <sequence>
+          <element name="sts" type="int"/>
+          <element name="errormsg" type="fjsd:getretailerwithsku_header_out_errormsg_FGLString"/>
+          <element name="records" type="int"/>
+        </sequence>
+      </complexType>
+      <simpleType name="getretailerwithsku_retailer_out_ccode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_retailer_out_shipcext_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_retailer_out_style_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_retailer_out_col_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_retailer_out_dm_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_retailer_out_size_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_retailer_out_custsku_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_retailer_out_custstyle_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_retailer_out_custcol_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getretailerwithsku_retailer_out_custsize_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getretailerwithsku_retailer_out">
+        <sequence>
+          <element name="ccode" type="fjsd:getretailerwithsku_retailer_out_ccode_FGLString"/>
+          <element name="shipcext" type="fjsd:getretailerwithsku_retailer_out_shipcext_FGLString"/>
+          <element name="style" type="fjsd:getretailerwithsku_retailer_out_style_FGLString"/>
+          <element name="col" type="fjsd:getretailerwithsku_retailer_out_col_FGLString"/>
+          <element name="dm" type="fjsd:getretailerwithsku_retailer_out_dm_FGLString"/>
+          <element name="size" type="fjsd:getretailerwithsku_retailer_out_size_FGLString"/>
+          <element name="custsku" type="fjsd:getretailerwithsku_retailer_out_custsku_FGLString"/>
+          <element name="custstyle" type="fjsd:getretailerwithsku_retailer_out_custstyle_FGLString"/>
+          <element name="custcol" type="fjsd:getretailerwithsku_retailer_out_custcol_FGLString"/>
+          <element name="custsize" type="fjsd:getretailerwithsku_retailer_out_custsize_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfgetretailerwithsku_retailer_out_getretailerwithsku_retailer_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:getretailerwithsku_retailer_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:getretailerwithsku_retailer_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="getsalesrep_salesman_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_sotype_in_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_ccode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_store_in_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_style_in_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_division_in_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_unitprice_in_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="8"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_errormsg_out_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_detail_out_salesman_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_detail_out_comrate_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="5"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsalesrep_detail_out_comtype_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getsalesrep_detail_out">
+        <sequence>
+          <element name="salesman" type="fjsd:getsalesrep_detail_out_salesman_FGLString"/>
+          <element name="comrate" type="fjsd:getsalesrep_detail_out_comrate_FGLDecimal"/>
+          <element name="comtype" type="fjsd:getsalesrep_detail_out_comtype_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfgetsalesrep_detail_out_getsalesrep_detail_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:getsalesrep_detail_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:getsalesrep_detail_out[10]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
       <simpleType name="getserialnumber_txtype_in_FGLString">
         <restriction base="string">
           <maxLength value="1"/>
@@ -691,6 +1665,84 @@
           <maxLength value="60"/>
         </restriction>
       </simpleType>
+      <simpleType name="getsetuptable_tablename_in_key_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getsetuptable_tablename_in">
+        <sequence>
+          <element name="key" type="fjsd:getsetuptable_tablename_in_key_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfgetsetuptable_tablename_in_getsetuptable_tablename_in">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:getsetuptable_tablename_in"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:getsetuptable_tablename_in[20]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="getsetuptable_header_out_errormsg_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getsetuptable_header_out">
+        <sequence>
+          <element name="sts" type="int"/>
+          <element name="errormsg" type="fjsd:getsetuptable_header_out_errormsg_FGLString"/>
+        </sequence>
+      </complexType>
+      <simpleType name="getsetuptable_detail_out_tablename_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsetuptable_detail_out_content_key_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="getsetuptable_detail_out_content_descrip_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <complexType name="getsetuptable_detail_out_content">
+        <sequence>
+          <element name="key" type="fjsd:getsetuptable_detail_out_content_key_FGLString"/>
+          <element name="descrip" type="fjsd:getsetuptable_detail_out_content_descrip_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfgetsetuptable_detail_out_content_getsetuptable_detail_out_content">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:getsetuptable_detail_out_content"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:getsetuptable_detail_out_content[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="getsetuptable_detail_out">
+        <sequence>
+          <element name="tablename" type="fjsd:getsetuptable_detail_out_tablename_FGLString"/>
+          <element name="content" type="fjsd:ArrayOfgetsetuptable_detail_out_content_getsetuptable_detail_out_content"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfgetsetuptable_detail_out_getsetuptable_detail_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:getsetuptable_detail_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:getsetuptable_detail_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
       <simpleType name="getshoppingcart_rec_in_spcid_FGLString">
         <restriction base="string">
           <maxLength value="30"/>
@@ -1074,7 +2126,7 @@
           <element name="col" type="fjsd:getshoppingcart_rec_out_service_col_FGLString"/>
           <element name="dm" type="fjsd:getshoppingcart_rec_out_service_dm_FGLString"/>
           <element name="size" type="fjsd:getshoppingcart_rec_out_service_size_FGLString"/>
-          <element name="sizeidx" type="short"/>
+          <element name="sizeidx" type="int"/>
           <element name="descrip" type="fjsd:getshoppingcart_rec_out_service_descrip_FGLString"/>
           <element name="servcode" type="fjsd:getshoppingcart_rec_out_service_servcode_FGLString"/>
           <element name="servdesc" type="fjsd:getshoppingcart_rec_out_service_servdesc_FGLString"/>
@@ -1299,11 +2351,11 @@
       </simpleType>
       <complexType name="productgroup_rec_out_header">
         <sequence>
-          <element name="sts" type="short"/>
+          <element name="sts" type="int"/>
           <element name="errormsg" type="fjsd:productgroup_rec_out_header_errormsg_FGLString"/>
-          <element name="records" type="short"/>
-          <element name="currentpage" type="short"/>
-          <element name="viewcount" type="short"/>
+          <element name="records" type="int"/>
+          <element name="currentpage" type="int"/>
+          <element name="viewcount" type="int"/>
         </sequence>
       </complexType>
       <simpleType name="productgroup_rec_out_items_style_FGLString">
@@ -1413,7 +2465,7 @@
       </simpleType>
       <simpleType name="putaccount_email_in_FGLString">
         <restriction base="string">
-          <maxLength value="20"/>
+          <maxLength value="40"/>
         </restriction>
       </simpleType>
       <simpleType name="putaccount_currency_in_FGLString">
@@ -1640,7 +2692,7 @@
       </simpleType>
       <simpleType name="putorder_rec_in_header_msg_FGLString">
         <restriction base="string">
-          <maxLength value="60"/>
+          <maxLength value="120"/>
         </restriction>
       </simpleType>
       <simpleType name="putorder_rec_in_header_crefnum_FGLString">
@@ -1758,12 +2810,12 @@
       </simpleType>
       <simpleType name="putra_header_in_note_FGLString">
         <restriction base="string">
-          <maxLength value="60"/>
+          <maxLength value="200"/>
         </restriction>
       </simpleType>
       <simpleType name="putra_header_in_internalnote_FGLString">
         <restriction base="string">
-          <maxLength value="60"/>
+          <maxLength value="200"/>
         </restriction>
       </simpleType>
       <simpleType name="putra_header_in_freight_FGLDecimal">
@@ -1916,6 +2968,1826 @@
           <maxLength value="60"/>
         </restriction>
       </simpleType>
+      <simpleType name="rptcustomerprojection_salesman_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_ccode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="100"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_cext_in_FGLString">
+        <restriction base="string">
+          <maxLength value="100"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_gcode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_scode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_style_in_FGLString">
+        <restriction base="string">
+          <maxLength value="100"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_filters_in_key_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_filters_in_value_FGLString">
+        <restriction base="string">
+          <maxLength value="50"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptcustomerprojection_filters_in">
+        <sequence>
+          <element name="key" type="fjsd:rptcustomerprojection_filters_in_key_FGLString"/>
+          <element name="value" type="fjsd:rptcustomerprojection_filters_in_value_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfrptcustomerprojection_filters_in_rptcustomerprojection_filters_in">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:rptcustomerprojection_filters_in"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:rptcustomerprojection_filters_in[20]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="rptcustomerprojection_header_out_errormsg_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptcustomerprojection_header_out">
+        <sequence>
+          <element name="sts" type="short"/>
+          <element name="errormsg" type="fjsd:rptcustomerprojection_header_out_errormsg_FGLString"/>
+          <element name="records" type="short"/>
+        </sequence>
+      </complexType>
+      <simpleType name="rptcustomerprojection_detail_out_salesman_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_ccode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_company_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_cext_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_gcode_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_style_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_unitprice_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="8"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt1_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt2_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt3_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt4_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt5_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt6_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt7_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt8_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt9_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt10_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt11_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_pamt12_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt1_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt2_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt3_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt4_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt5_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt6_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt7_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt8_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt9_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt10_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt11_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_hamt12_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt1_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt2_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt3_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt4_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt5_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt6_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt7_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt8_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt9_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt10_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt11_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_iamt12_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt1_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt2_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt3_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt4_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt5_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt6_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt7_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt8_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt9_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt10_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt11_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_detail_out_oamt12_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptcustomerprojection_detail_out">
+        <sequence>
+          <element name="salesman" type="fjsd:rptcustomerprojection_detail_out_salesman_FGLString"/>
+          <element name="ccode" type="fjsd:rptcustomerprojection_detail_out_ccode_FGLString"/>
+          <element name="company" type="fjsd:rptcustomerprojection_detail_out_company_FGLString"/>
+          <element name="cext" type="fjsd:rptcustomerprojection_detail_out_cext_FGLString"/>
+          <element name="gcode" type="fjsd:rptcustomerprojection_detail_out_gcode_FGLString"/>
+          <element name="yr" type="short"/>
+          <element name="mo" type="short"/>
+          <element name="style" type="fjsd:rptcustomerprojection_detail_out_style_FGLString"/>
+          <element name="unitprice" type="fjsd:rptcustomerprojection_detail_out_unitprice_FGLDecimal"/>
+          <element name="p1" type="int"/>
+          <element name="p2" type="int"/>
+          <element name="p3" type="int"/>
+          <element name="p4" type="int"/>
+          <element name="p5" type="int"/>
+          <element name="p6" type="int"/>
+          <element name="p7" type="int"/>
+          <element name="p8" type="int"/>
+          <element name="p9" type="int"/>
+          <element name="p10" type="int"/>
+          <element name="p11" type="int"/>
+          <element name="p12" type="int"/>
+          <element name="pamt1" type="fjsd:rptcustomerprojection_detail_out_pamt1_FGLDecimal"/>
+          <element name="pamt2" type="fjsd:rptcustomerprojection_detail_out_pamt2_FGLDecimal"/>
+          <element name="pamt3" type="fjsd:rptcustomerprojection_detail_out_pamt3_FGLDecimal"/>
+          <element name="pamt4" type="fjsd:rptcustomerprojection_detail_out_pamt4_FGLDecimal"/>
+          <element name="pamt5" type="fjsd:rptcustomerprojection_detail_out_pamt5_FGLDecimal"/>
+          <element name="pamt6" type="fjsd:rptcustomerprojection_detail_out_pamt6_FGLDecimal"/>
+          <element name="pamt7" type="fjsd:rptcustomerprojection_detail_out_pamt7_FGLDecimal"/>
+          <element name="pamt8" type="fjsd:rptcustomerprojection_detail_out_pamt8_FGLDecimal"/>
+          <element name="pamt9" type="fjsd:rptcustomerprojection_detail_out_pamt9_FGLDecimal"/>
+          <element name="pamt10" type="fjsd:rptcustomerprojection_detail_out_pamt10_FGLDecimal"/>
+          <element name="pamt11" type="fjsd:rptcustomerprojection_detail_out_pamt11_FGLDecimal"/>
+          <element name="pamt12" type="fjsd:rptcustomerprojection_detail_out_pamt12_FGLDecimal"/>
+          <element name="h1" type="int"/>
+          <element name="h2" type="int"/>
+          <element name="h3" type="int"/>
+          <element name="h4" type="int"/>
+          <element name="h5" type="int"/>
+          <element name="h6" type="int"/>
+          <element name="h7" type="int"/>
+          <element name="h8" type="int"/>
+          <element name="h9" type="int"/>
+          <element name="h10" type="int"/>
+          <element name="h11" type="int"/>
+          <element name="h12" type="int"/>
+          <element name="hamt1" type="fjsd:rptcustomerprojection_detail_out_hamt1_FGLDecimal"/>
+          <element name="hamt2" type="fjsd:rptcustomerprojection_detail_out_hamt2_FGLDecimal"/>
+          <element name="hamt3" type="fjsd:rptcustomerprojection_detail_out_hamt3_FGLDecimal"/>
+          <element name="hamt4" type="fjsd:rptcustomerprojection_detail_out_hamt4_FGLDecimal"/>
+          <element name="hamt5" type="fjsd:rptcustomerprojection_detail_out_hamt5_FGLDecimal"/>
+          <element name="hamt6" type="fjsd:rptcustomerprojection_detail_out_hamt6_FGLDecimal"/>
+          <element name="hamt7" type="fjsd:rptcustomerprojection_detail_out_hamt7_FGLDecimal"/>
+          <element name="hamt8" type="fjsd:rptcustomerprojection_detail_out_hamt8_FGLDecimal"/>
+          <element name="hamt9" type="fjsd:rptcustomerprojection_detail_out_hamt9_FGLDecimal"/>
+          <element name="hamt10" type="fjsd:rptcustomerprojection_detail_out_hamt10_FGLDecimal"/>
+          <element name="hamt11" type="fjsd:rptcustomerprojection_detail_out_hamt11_FGLDecimal"/>
+          <element name="hamt12" type="fjsd:rptcustomerprojection_detail_out_hamt12_FGLDecimal"/>
+          <element name="i1" type="int"/>
+          <element name="i2" type="int"/>
+          <element name="i3" type="int"/>
+          <element name="i4" type="int"/>
+          <element name="i5" type="int"/>
+          <element name="i6" type="int"/>
+          <element name="i7" type="int"/>
+          <element name="i8" type="int"/>
+          <element name="i9" type="int"/>
+          <element name="i10" type="int"/>
+          <element name="i11" type="int"/>
+          <element name="i12" type="int"/>
+          <element name="iamt1" type="fjsd:rptcustomerprojection_detail_out_iamt1_FGLDecimal"/>
+          <element name="iamt2" type="fjsd:rptcustomerprojection_detail_out_iamt2_FGLDecimal"/>
+          <element name="iamt3" type="fjsd:rptcustomerprojection_detail_out_iamt3_FGLDecimal"/>
+          <element name="iamt4" type="fjsd:rptcustomerprojection_detail_out_iamt4_FGLDecimal"/>
+          <element name="iamt5" type="fjsd:rptcustomerprojection_detail_out_iamt5_FGLDecimal"/>
+          <element name="iamt6" type="fjsd:rptcustomerprojection_detail_out_iamt6_FGLDecimal"/>
+          <element name="iamt7" type="fjsd:rptcustomerprojection_detail_out_iamt7_FGLDecimal"/>
+          <element name="iamt8" type="fjsd:rptcustomerprojection_detail_out_iamt8_FGLDecimal"/>
+          <element name="iamt9" type="fjsd:rptcustomerprojection_detail_out_iamt9_FGLDecimal"/>
+          <element name="iamt10" type="fjsd:rptcustomerprojection_detail_out_iamt10_FGLDecimal"/>
+          <element name="iamt11" type="fjsd:rptcustomerprojection_detail_out_iamt11_FGLDecimal"/>
+          <element name="iamt12" type="fjsd:rptcustomerprojection_detail_out_iamt12_FGLDecimal"/>
+          <element name="o1" type="int"/>
+          <element name="o2" type="int"/>
+          <element name="o3" type="int"/>
+          <element name="o4" type="int"/>
+          <element name="o5" type="int"/>
+          <element name="o6" type="int"/>
+          <element name="o7" type="int"/>
+          <element name="o8" type="int"/>
+          <element name="o9" type="int"/>
+          <element name="o10" type="int"/>
+          <element name="o11" type="int"/>
+          <element name="o12" type="int"/>
+          <element name="oamt1" type="fjsd:rptcustomerprojection_detail_out_oamt1_FGLDecimal"/>
+          <element name="oamt2" type="fjsd:rptcustomerprojection_detail_out_oamt2_FGLDecimal"/>
+          <element name="oamt3" type="fjsd:rptcustomerprojection_detail_out_oamt3_FGLDecimal"/>
+          <element name="oamt4" type="fjsd:rptcustomerprojection_detail_out_oamt4_FGLDecimal"/>
+          <element name="oamt5" type="fjsd:rptcustomerprojection_detail_out_oamt5_FGLDecimal"/>
+          <element name="oamt6" type="fjsd:rptcustomerprojection_detail_out_oamt6_FGLDecimal"/>
+          <element name="oamt7" type="fjsd:rptcustomerprojection_detail_out_oamt7_FGLDecimal"/>
+          <element name="oamt8" type="fjsd:rptcustomerprojection_detail_out_oamt8_FGLDecimal"/>
+          <element name="oamt9" type="fjsd:rptcustomerprojection_detail_out_oamt9_FGLDecimal"/>
+          <element name="oamt10" type="fjsd:rptcustomerprojection_detail_out_oamt10_FGLDecimal"/>
+          <element name="oamt11" type="fjsd:rptcustomerprojection_detail_out_oamt11_FGLDecimal"/>
+          <element name="oamt12" type="fjsd:rptcustomerprojection_detail_out_oamt12_FGLDecimal"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfrptcustomerprojection_detail_out_rptcustomerprojection_detail_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:rptcustomerprojection_detail_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:rptcustomerprojection_detail_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt1_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt2_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt3_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt4_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt5_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt6_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt7_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt8_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt9_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt10_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt11_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_pamt12_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt1_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt2_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt3_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt4_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt5_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt6_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt7_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt8_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt9_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt10_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt11_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_hamt12_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt1_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt2_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt3_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt4_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt5_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt6_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt7_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt8_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt9_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt10_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt11_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_iamt12_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt1_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt2_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt3_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt4_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt5_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt6_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt7_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt8_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt9_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt10_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt11_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_reporttotal_out_oamt12_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptcustomerprojection_reporttotal_out">
+        <sequence>
+          <element name="p1" type="int"/>
+          <element name="p2" type="int"/>
+          <element name="p3" type="int"/>
+          <element name="p4" type="int"/>
+          <element name="p5" type="int"/>
+          <element name="p6" type="int"/>
+          <element name="p7" type="int"/>
+          <element name="p8" type="int"/>
+          <element name="p9" type="int"/>
+          <element name="p10" type="int"/>
+          <element name="p11" type="int"/>
+          <element name="p12" type="int"/>
+          <element name="pamt1" type="fjsd:rptcustomerprojection_reporttotal_out_pamt1_FGLDecimal"/>
+          <element name="pamt2" type="fjsd:rptcustomerprojection_reporttotal_out_pamt2_FGLDecimal"/>
+          <element name="pamt3" type="fjsd:rptcustomerprojection_reporttotal_out_pamt3_FGLDecimal"/>
+          <element name="pamt4" type="fjsd:rptcustomerprojection_reporttotal_out_pamt4_FGLDecimal"/>
+          <element name="pamt5" type="fjsd:rptcustomerprojection_reporttotal_out_pamt5_FGLDecimal"/>
+          <element name="pamt6" type="fjsd:rptcustomerprojection_reporttotal_out_pamt6_FGLDecimal"/>
+          <element name="pamt7" type="fjsd:rptcustomerprojection_reporttotal_out_pamt7_FGLDecimal"/>
+          <element name="pamt8" type="fjsd:rptcustomerprojection_reporttotal_out_pamt8_FGLDecimal"/>
+          <element name="pamt9" type="fjsd:rptcustomerprojection_reporttotal_out_pamt9_FGLDecimal"/>
+          <element name="pamt10" type="fjsd:rptcustomerprojection_reporttotal_out_pamt10_FGLDecimal"/>
+          <element name="pamt11" type="fjsd:rptcustomerprojection_reporttotal_out_pamt11_FGLDecimal"/>
+          <element name="pamt12" type="fjsd:rptcustomerprojection_reporttotal_out_pamt12_FGLDecimal"/>
+          <element name="h1" type="int"/>
+          <element name="h2" type="int"/>
+          <element name="h3" type="int"/>
+          <element name="h4" type="int"/>
+          <element name="h5" type="int"/>
+          <element name="h6" type="int"/>
+          <element name="h7" type="int"/>
+          <element name="h8" type="int"/>
+          <element name="h9" type="int"/>
+          <element name="h10" type="int"/>
+          <element name="h11" type="int"/>
+          <element name="h12" type="int"/>
+          <element name="hamt1" type="fjsd:rptcustomerprojection_reporttotal_out_hamt1_FGLDecimal"/>
+          <element name="hamt2" type="fjsd:rptcustomerprojection_reporttotal_out_hamt2_FGLDecimal"/>
+          <element name="hamt3" type="fjsd:rptcustomerprojection_reporttotal_out_hamt3_FGLDecimal"/>
+          <element name="hamt4" type="fjsd:rptcustomerprojection_reporttotal_out_hamt4_FGLDecimal"/>
+          <element name="hamt5" type="fjsd:rptcustomerprojection_reporttotal_out_hamt5_FGLDecimal"/>
+          <element name="hamt6" type="fjsd:rptcustomerprojection_reporttotal_out_hamt6_FGLDecimal"/>
+          <element name="hamt7" type="fjsd:rptcustomerprojection_reporttotal_out_hamt7_FGLDecimal"/>
+          <element name="hamt8" type="fjsd:rptcustomerprojection_reporttotal_out_hamt8_FGLDecimal"/>
+          <element name="hamt9" type="fjsd:rptcustomerprojection_reporttotal_out_hamt9_FGLDecimal"/>
+          <element name="hamt10" type="fjsd:rptcustomerprojection_reporttotal_out_hamt10_FGLDecimal"/>
+          <element name="hamt11" type="fjsd:rptcustomerprojection_reporttotal_out_hamt11_FGLDecimal"/>
+          <element name="hamt12" type="fjsd:rptcustomerprojection_reporttotal_out_hamt12_FGLDecimal"/>
+          <element name="i1" type="int"/>
+          <element name="i2" type="int"/>
+          <element name="i3" type="int"/>
+          <element name="i4" type="int"/>
+          <element name="i5" type="int"/>
+          <element name="i6" type="int"/>
+          <element name="i7" type="int"/>
+          <element name="i8" type="int"/>
+          <element name="i9" type="int"/>
+          <element name="i10" type="int"/>
+          <element name="i11" type="int"/>
+          <element name="i12" type="int"/>
+          <element name="iamt1" type="fjsd:rptcustomerprojection_reporttotal_out_iamt1_FGLDecimal"/>
+          <element name="iamt2" type="fjsd:rptcustomerprojection_reporttotal_out_iamt2_FGLDecimal"/>
+          <element name="iamt3" type="fjsd:rptcustomerprojection_reporttotal_out_iamt3_FGLDecimal"/>
+          <element name="iamt4" type="fjsd:rptcustomerprojection_reporttotal_out_iamt4_FGLDecimal"/>
+          <element name="iamt5" type="fjsd:rptcustomerprojection_reporttotal_out_iamt5_FGLDecimal"/>
+          <element name="iamt6" type="fjsd:rptcustomerprojection_reporttotal_out_iamt6_FGLDecimal"/>
+          <element name="iamt7" type="fjsd:rptcustomerprojection_reporttotal_out_iamt7_FGLDecimal"/>
+          <element name="iamt8" type="fjsd:rptcustomerprojection_reporttotal_out_iamt8_FGLDecimal"/>
+          <element name="iamt9" type="fjsd:rptcustomerprojection_reporttotal_out_iamt9_FGLDecimal"/>
+          <element name="iamt10" type="fjsd:rptcustomerprojection_reporttotal_out_iamt10_FGLDecimal"/>
+          <element name="iamt11" type="fjsd:rptcustomerprojection_reporttotal_out_iamt11_FGLDecimal"/>
+          <element name="iamt12" type="fjsd:rptcustomerprojection_reporttotal_out_iamt12_FGLDecimal"/>
+          <element name="o1" type="int"/>
+          <element name="o2" type="int"/>
+          <element name="o3" type="int"/>
+          <element name="o4" type="int"/>
+          <element name="o5" type="int"/>
+          <element name="o6" type="int"/>
+          <element name="o7" type="int"/>
+          <element name="o8" type="int"/>
+          <element name="o9" type="int"/>
+          <element name="o10" type="int"/>
+          <element name="o11" type="int"/>
+          <element name="o12" type="int"/>
+          <element name="oamt1" type="fjsd:rptcustomerprojection_reporttotal_out_oamt1_FGLDecimal"/>
+          <element name="oamt2" type="fjsd:rptcustomerprojection_reporttotal_out_oamt2_FGLDecimal"/>
+          <element name="oamt3" type="fjsd:rptcustomerprojection_reporttotal_out_oamt3_FGLDecimal"/>
+          <element name="oamt4" type="fjsd:rptcustomerprojection_reporttotal_out_oamt4_FGLDecimal"/>
+          <element name="oamt5" type="fjsd:rptcustomerprojection_reporttotal_out_oamt5_FGLDecimal"/>
+          <element name="oamt6" type="fjsd:rptcustomerprojection_reporttotal_out_oamt6_FGLDecimal"/>
+          <element name="oamt7" type="fjsd:rptcustomerprojection_reporttotal_out_oamt7_FGLDecimal"/>
+          <element name="oamt8" type="fjsd:rptcustomerprojection_reporttotal_out_oamt8_FGLDecimal"/>
+          <element name="oamt9" type="fjsd:rptcustomerprojection_reporttotal_out_oamt9_FGLDecimal"/>
+          <element name="oamt10" type="fjsd:rptcustomerprojection_reporttotal_out_oamt10_FGLDecimal"/>
+          <element name="oamt11" type="fjsd:rptcustomerprojection_reporttotal_out_oamt11_FGLDecimal"/>
+          <element name="oamt12" type="fjsd:rptcustomerprojection_reporttotal_out_oamt12_FGLDecimal"/>
+        </sequence>
+      </complexType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_gcode_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_descrip_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt1_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt2_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt3_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt4_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt5_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt6_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt7_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt8_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt9_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt10_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt11_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerprojection_grouptotal_out_amt12_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptcustomerprojection_grouptotal_out">
+        <sequence>
+          <element name="gcode" type="fjsd:rptcustomerprojection_grouptotal_out_gcode_FGLString"/>
+          <element name="descrip" type="fjsd:rptcustomerprojection_grouptotal_out_descrip_FGLString"/>
+          <element name="qty1" type="int"/>
+          <element name="qty2" type="int"/>
+          <element name="qty3" type="int"/>
+          <element name="qty4" type="int"/>
+          <element name="qty5" type="int"/>
+          <element name="qty6" type="int"/>
+          <element name="qty7" type="int"/>
+          <element name="qty8" type="int"/>
+          <element name="qty9" type="int"/>
+          <element name="qty10" type="int"/>
+          <element name="qty11" type="int"/>
+          <element name="qty12" type="int"/>
+          <element name="amt1" type="fjsd:rptcustomerprojection_grouptotal_out_amt1_FGLDecimal"/>
+          <element name="amt2" type="fjsd:rptcustomerprojection_grouptotal_out_amt2_FGLDecimal"/>
+          <element name="amt3" type="fjsd:rptcustomerprojection_grouptotal_out_amt3_FGLDecimal"/>
+          <element name="amt4" type="fjsd:rptcustomerprojection_grouptotal_out_amt4_FGLDecimal"/>
+          <element name="amt5" type="fjsd:rptcustomerprojection_grouptotal_out_amt5_FGLDecimal"/>
+          <element name="amt6" type="fjsd:rptcustomerprojection_grouptotal_out_amt6_FGLDecimal"/>
+          <element name="amt7" type="fjsd:rptcustomerprojection_grouptotal_out_amt7_FGLDecimal"/>
+          <element name="amt8" type="fjsd:rptcustomerprojection_grouptotal_out_amt8_FGLDecimal"/>
+          <element name="amt9" type="fjsd:rptcustomerprojection_grouptotal_out_amt9_FGLDecimal"/>
+          <element name="amt10" type="fjsd:rptcustomerprojection_grouptotal_out_amt10_FGLDecimal"/>
+          <element name="amt11" type="fjsd:rptcustomerprojection_grouptotal_out_amt11_FGLDecimal"/>
+          <element name="amt12" type="fjsd:rptcustomerprojection_grouptotal_out_amt12_FGLDecimal"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfrptcustomerprojection_grouptotal_out_rptcustomerprojection_grouptotal_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:rptcustomerprojection_grouptotal_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:rptcustomerprojection_grouptotal_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="rptcustomerstatement_salesman_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_ccode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="100"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_division_in_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_termscode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="50"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_ctype_in_FGLString">
+        <restriction base="string">
+          <maxLength value="50"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_header_out_errormsg_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptcustomerstatement_header_out">
+        <sequence>
+          <element name="sts" type="short"/>
+          <element name="errormsg" type="fjsd:rptcustomerstatement_header_out_errormsg_FGLString"/>
+          <element name="records" type="int"/>
+        </sequence>
+      </complexType>
+      <simpleType name="rptcustomerstatement_detail_out_ccode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_cext_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_company_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_ponum_FGLString">
+        <restriction base="string">
+          <maxLength value="15"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_terms_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_balance_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_cur_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_pd30_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_pd60_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_pd90_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_pd120_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_discount_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_currency_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_detail_out_curbalance_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptcustomerstatement_detail_out">
+        <sequence>
+          <element name="ccode" type="fjsd:rptcustomerstatement_detail_out_ccode_FGLString"/>
+          <element name="cext" type="fjsd:rptcustomerstatement_detail_out_cext_FGLString"/>
+          <element name="company" type="fjsd:rptcustomerstatement_detail_out_company_FGLString"/>
+          <element name="invnum" type="int"/>
+          <element name="ponum" type="fjsd:rptcustomerstatement_detail_out_ponum_FGLString"/>
+          <element name="txdate" type="date"/>
+          <element name="duedate" type="date"/>
+          <element name="terms" type="fjsd:rptcustomerstatement_detail_out_terms_FGLString"/>
+          <element name="balance" type="fjsd:rptcustomerstatement_detail_out_balance_FGLDecimal"/>
+          <element name="cur" type="fjsd:rptcustomerstatement_detail_out_cur_FGLDecimal"/>
+          <element name="pd30" type="fjsd:rptcustomerstatement_detail_out_pd30_FGLDecimal"/>
+          <element name="pd60" type="fjsd:rptcustomerstatement_detail_out_pd60_FGLDecimal"/>
+          <element name="pd90" type="fjsd:rptcustomerstatement_detail_out_pd90_FGLDecimal"/>
+          <element name="pd120" type="fjsd:rptcustomerstatement_detail_out_pd120_FGLDecimal"/>
+          <element name="discount" type="fjsd:rptcustomerstatement_detail_out_discount_FGLDecimal"/>
+          <element name="currency" type="fjsd:rptcustomerstatement_detail_out_currency_FGLString"/>
+          <element name="curbalance" type="fjsd:rptcustomerstatement_detail_out_curbalance_FGLDecimal"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfrptcustomerstatement_detail_out_rptcustomerstatement_detail_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:rptcustomerstatement_detail_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:rptcustomerstatement_detail_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="rptcustomerstatement_reporttotal_out_balance_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_reporttotal_out_cur_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_reporttotal_out_pd30_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_reporttotal_out_pd60_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_reporttotal_out_pd90_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_reporttotal_out_pd120_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_reporttotal_out_discount_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptcustomerstatement_reporttotal_out">
+        <sequence>
+          <element name="balance" type="fjsd:rptcustomerstatement_reporttotal_out_balance_FGLDecimal"/>
+          <element name="cur" type="fjsd:rptcustomerstatement_reporttotal_out_cur_FGLDecimal"/>
+          <element name="pd30" type="fjsd:rptcustomerstatement_reporttotal_out_pd30_FGLDecimal"/>
+          <element name="pd60" type="fjsd:rptcustomerstatement_reporttotal_out_pd60_FGLDecimal"/>
+          <element name="pd90" type="fjsd:rptcustomerstatement_reporttotal_out_pd90_FGLDecimal"/>
+          <element name="pd120" type="fjsd:rptcustomerstatement_reporttotal_out_pd120_FGLDecimal"/>
+          <element name="discount" type="fjsd:rptcustomerstatement_reporttotal_out_discount_FGLDecimal"/>
+        </sequence>
+      </complexType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_ccode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_company_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_limit_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_available_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_balance_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="14"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_cur_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="14"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_pd30_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="14"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_pd60_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="14"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_pd90_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="14"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_pd120_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="14"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_discount_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="16"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_currency_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptcustomerstatement_grouptotal_out_curbalance_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="10"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptcustomerstatement_grouptotal_out">
+        <sequence>
+          <element name="ccode" type="fjsd:rptcustomerstatement_grouptotal_out_ccode_FGLString"/>
+          <element name="company" type="fjsd:rptcustomerstatement_grouptotal_out_company_FGLString"/>
+          <element name="limit" type="fjsd:rptcustomerstatement_grouptotal_out_limit_FGLDecimal"/>
+          <element name="available" type="fjsd:rptcustomerstatement_grouptotal_out_available_FGLDecimal"/>
+          <element name="balance" type="fjsd:rptcustomerstatement_grouptotal_out_balance_FGLDecimal"/>
+          <element name="cur" type="fjsd:rptcustomerstatement_grouptotal_out_cur_FGLDecimal"/>
+          <element name="pd30" type="fjsd:rptcustomerstatement_grouptotal_out_pd30_FGLDecimal"/>
+          <element name="pd60" type="fjsd:rptcustomerstatement_grouptotal_out_pd60_FGLDecimal"/>
+          <element name="pd90" type="fjsd:rptcustomerstatement_grouptotal_out_pd90_FGLDecimal"/>
+          <element name="pd120" type="fjsd:rptcustomerstatement_grouptotal_out_pd120_FGLDecimal"/>
+          <element name="discount" type="fjsd:rptcustomerstatement_grouptotal_out_discount_FGLDecimal"/>
+          <element name="currency" type="fjsd:rptcustomerstatement_grouptotal_out_currency_FGLString"/>
+          <element name="curbalance" type="fjsd:rptcustomerstatement_grouptotal_out_curbalance_FGLDecimal"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfrptcustomerstatement_grouptotal_out_rptcustomerstatement_grouptotal_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:rptcustomerstatement_grouptotal_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:rptcustomerstatement_grouptotal_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="rptsalesorderjournal_salesrep_in_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_ccode_in_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_ordnum_in_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_sotype_in_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_ponum_in_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_division_in_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_ostatus_in_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_style_in_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_styledesc_in_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_orderdate_in_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_startship_in_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_cancel_in_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_requestdate_in_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_h1_in_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_h2_in_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_h3_in_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_groupby_in_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_sortby_in_FGLString">
+        <restriction base="string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_sortorder_in_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_reporttype_in_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_filters_in_key_FGLString">
+        <restriction base="string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_filters_in_value_FGLString">
+        <restriction base="string">
+          <maxLength value="250"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptsalesorderjournal_filters_in">
+        <sequence>
+          <element name="key" type="fjsd:rptsalesorderjournal_filters_in_key_FGLString"/>
+          <element name="value" type="fjsd:rptsalesorderjournal_filters_in_value_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfrptsalesorderjournal_filters_in_rptsalesorderjournal_filters_in">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:rptsalesorderjournal_filters_in"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:rptsalesorderjournal_filters_in[20]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="rptsalesorderjournal_header_out_errormsg_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptsalesorderjournal_header_out">
+        <sequence>
+          <element name="sts" type="int"/>
+          <element name="errormsg" type="fjsd:rptsalesorderjournal_header_out_errormsg_FGLString"/>
+          <element name="records" type="int"/>
+        </sequence>
+      </complexType>
+      <simpleType name="rptsalesorderjournal_rec_out_key1_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_key2_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_key3_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_key4_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_key5_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_key6_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_key7_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_key8_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_key9_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_key10_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value1_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value2_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value3_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value4_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value5_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value6_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value7_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value8_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value9_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_value10_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_status_FGLString">
+        <restriction base="string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_amount_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_ordered_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_open_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_canceled_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_allocated_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_picked_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_shipped_FGLDecimal">
+        <restriction base="decimal">
+          <totalDigits value="12"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_currency_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_recdate_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_startship_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_cancel_FGLString">
+        <restriction base="string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key1_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key2_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key3_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key4_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key5_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key6_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key7_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key8_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key9_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_key10_FGLString">
+        <restriction base="string">
+          <maxLength value="25"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value1_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value2_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value3_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value4_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value5_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value6_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value7_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value8_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value9_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_value10_FGLString">
+        <restriction base="string">
+          <maxLength value="150"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rptsalesorderjournal_rec_out_detail_currency_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <complexType name="rptsalesorderjournal_rec_out_detail">
+        <sequence>
+          <element name="key1" type="fjsd:rptsalesorderjournal_rec_out_detail_key1_FGLString"/>
+          <element name="key2" type="fjsd:rptsalesorderjournal_rec_out_detail_key2_FGLString"/>
+          <element name="key3" type="fjsd:rptsalesorderjournal_rec_out_detail_key3_FGLString"/>
+          <element name="key4" type="fjsd:rptsalesorderjournal_rec_out_detail_key4_FGLString"/>
+          <element name="key5" type="fjsd:rptsalesorderjournal_rec_out_detail_key5_FGLString"/>
+          <element name="key6" type="fjsd:rptsalesorderjournal_rec_out_detail_key6_FGLString"/>
+          <element name="key7" type="fjsd:rptsalesorderjournal_rec_out_detail_key7_FGLString"/>
+          <element name="key8" type="fjsd:rptsalesorderjournal_rec_out_detail_key8_FGLString"/>
+          <element name="key9" type="fjsd:rptsalesorderjournal_rec_out_detail_key9_FGLString"/>
+          <element name="key10" type="fjsd:rptsalesorderjournal_rec_out_detail_key10_FGLString"/>
+          <element name="value1" type="fjsd:rptsalesorderjournal_rec_out_detail_value1_FGLString"/>
+          <element name="value2" type="fjsd:rptsalesorderjournal_rec_out_detail_value2_FGLString"/>
+          <element name="value3" type="fjsd:rptsalesorderjournal_rec_out_detail_value3_FGLString"/>
+          <element name="value4" type="fjsd:rptsalesorderjournal_rec_out_detail_value4_FGLString"/>
+          <element name="value5" type="fjsd:rptsalesorderjournal_rec_out_detail_value5_FGLString"/>
+          <element name="value6" type="fjsd:rptsalesorderjournal_rec_out_detail_value6_FGLString"/>
+          <element name="value7" type="fjsd:rptsalesorderjournal_rec_out_detail_value7_FGLString"/>
+          <element name="value8" type="fjsd:rptsalesorderjournal_rec_out_detail_value8_FGLString"/>
+          <element name="value9" type="fjsd:rptsalesorderjournal_rec_out_detail_value9_FGLString"/>
+          <element name="value10" type="fjsd:rptsalesorderjournal_rec_out_detail_value10_FGLString"/>
+          <element name="currency" type="fjsd:rptsalesorderjournal_rec_out_detail_currency_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfrptsalesorderjournal_rec_out_detail_rptsalesorderjournal_rec_out_detail">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:rptsalesorderjournal_rec_out_detail"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:rptsalesorderjournal_rec_out_detail[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="rptsalesorderjournal_rec_out">
+        <sequence>
+          <element name="key1" type="fjsd:rptsalesorderjournal_rec_out_key1_FGLString"/>
+          <element name="key2" type="fjsd:rptsalesorderjournal_rec_out_key2_FGLString"/>
+          <element name="key3" type="fjsd:rptsalesorderjournal_rec_out_key3_FGLString"/>
+          <element name="key4" type="fjsd:rptsalesorderjournal_rec_out_key4_FGLString"/>
+          <element name="key5" type="fjsd:rptsalesorderjournal_rec_out_key5_FGLString"/>
+          <element name="key6" type="fjsd:rptsalesorderjournal_rec_out_key6_FGLString"/>
+          <element name="key7" type="fjsd:rptsalesorderjournal_rec_out_key7_FGLString"/>
+          <element name="key8" type="fjsd:rptsalesorderjournal_rec_out_key8_FGLString"/>
+          <element name="key9" type="fjsd:rptsalesorderjournal_rec_out_key9_FGLString"/>
+          <element name="key10" type="fjsd:rptsalesorderjournal_rec_out_key10_FGLString"/>
+          <element name="value1" type="fjsd:rptsalesorderjournal_rec_out_value1_FGLString"/>
+          <element name="value2" type="fjsd:rptsalesorderjournal_rec_out_value2_FGLString"/>
+          <element name="value3" type="fjsd:rptsalesorderjournal_rec_out_value3_FGLString"/>
+          <element name="value4" type="fjsd:rptsalesorderjournal_rec_out_value4_FGLString"/>
+          <element name="value5" type="fjsd:rptsalesorderjournal_rec_out_value5_FGLString"/>
+          <element name="value6" type="fjsd:rptsalesorderjournal_rec_out_value6_FGLString"/>
+          <element name="value7" type="fjsd:rptsalesorderjournal_rec_out_value7_FGLString"/>
+          <element name="value8" type="fjsd:rptsalesorderjournal_rec_out_value8_FGLString"/>
+          <element name="value9" type="fjsd:rptsalesorderjournal_rec_out_value9_FGLString"/>
+          <element name="value10" type="fjsd:rptsalesorderjournal_rec_out_value10_FGLString"/>
+          <element name="status" type="fjsd:rptsalesorderjournal_rec_out_status_FGLString"/>
+          <element name="amount" type="fjsd:rptsalesorderjournal_rec_out_amount_FGLDecimal"/>
+          <element name="ordered" type="fjsd:rptsalesorderjournal_rec_out_ordered_FGLDecimal"/>
+          <element name="open" type="fjsd:rptsalesorderjournal_rec_out_open_FGLDecimal"/>
+          <element name="canceled" type="fjsd:rptsalesorderjournal_rec_out_canceled_FGLDecimal"/>
+          <element name="allocated" type="fjsd:rptsalesorderjournal_rec_out_allocated_FGLDecimal"/>
+          <element name="picked" type="fjsd:rptsalesorderjournal_rec_out_picked_FGLDecimal"/>
+          <element name="shipped" type="fjsd:rptsalesorderjournal_rec_out_shipped_FGLDecimal"/>
+          <element name="orderedqty" type="int"/>
+          <element name="openqty" type="int"/>
+          <element name="canceledqty" type="int"/>
+          <element name="allocatedqty" type="int"/>
+          <element name="pickedqty" type="int"/>
+          <element name="shippedqty" type="int"/>
+          <element name="currency" type="fjsd:rptsalesorderjournal_rec_out_currency_FGLString"/>
+          <element name="recdate" type="fjsd:rptsalesorderjournal_rec_out_recdate_FGLString"/>
+          <element name="startship" type="fjsd:rptsalesorderjournal_rec_out_startship_FGLString"/>
+          <element name="cancel" type="fjsd:rptsalesorderjournal_rec_out_cancel_FGLString"/>
+          <element name="detail" type="fjsd:ArrayOfrptsalesorderjournal_rec_out_detail_rptsalesorderjournal_rec_out_detail"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfrptsalesorderjournal_rec_out_rptsalesorderjournal_rec_out">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:rptsalesorderjournal_rec_out"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:rptsalesorderjournal_rec_out[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
       <simpleType name="search_terms_in_FGLString">
         <restriction base="string">
           <maxLength value="30"/>
@@ -1948,9 +4820,9 @@
       </simpleType>
       <complexType name="search_rec_out_header">
         <sequence>
-          <element name="sts" type="short"/>
+          <element name="sts" type="int"/>
           <element name="errormsg" type="fjsd:search_rec_out_header_errormsg_FGLString"/>
-          <element name="records" type="short"/>
+          <element name="records" type="int"/>
         </sequence>
       </complexType>
       <simpleType name="search_rec_out_items_style_FGLString">
@@ -2004,6 +4876,115 @@
           <element name="items" type="fjsd:ArrayOfsearch_rec_out_items_search_rec_out_items"/>
         </sequence>
       </complexType>
+      <simpleType name="setcustomerprojection_detail_in_action_FGLString">
+        <restriction base="string">
+          <maxLength value="1"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_salesman_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_o_ccode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_o_cext_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_o_gcode_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_o_scode_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_o_style_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_o_amount_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_ccode_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_cext_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_gcode_FGLString">
+        <restriction base="string">
+          <maxLength value="3"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_scode_FGLString">
+        <restriction base="string">
+          <maxLength value="5"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_style_FGLString">
+        <restriction base="string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="setcustomerprojection_detail_in_amount_FGLString">
+        <restriction base="string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <complexType name="setcustomerprojection_detail_in">
+        <sequence>
+          <element name="action" type="fjsd:setcustomerprojection_detail_in_action_FGLString"/>
+          <element name="salesman" type="fjsd:setcustomerprojection_detail_in_salesman_FGLString"/>
+          <element name="o_ccode" type="fjsd:setcustomerprojection_detail_in_o_ccode_FGLString"/>
+          <element name="o_cext" type="fjsd:setcustomerprojection_detail_in_o_cext_FGLString"/>
+          <element name="o_gcode" type="fjsd:setcustomerprojection_detail_in_o_gcode_FGLString"/>
+          <element name="o_scode" type="fjsd:setcustomerprojection_detail_in_o_scode_FGLString"/>
+          <element name="o_style" type="fjsd:setcustomerprojection_detail_in_o_style_FGLString"/>
+          <element name="o_yr" type="short"/>
+          <element name="o_mo" type="short"/>
+          <element name="o_units" type="short"/>
+          <element name="o_amount" type="fjsd:setcustomerprojection_detail_in_o_amount_FGLString"/>
+          <element name="ccode" type="fjsd:setcustomerprojection_detail_in_ccode_FGLString"/>
+          <element name="cext" type="fjsd:setcustomerprojection_detail_in_cext_FGLString"/>
+          <element name="gcode" type="fjsd:setcustomerprojection_detail_in_gcode_FGLString"/>
+          <element name="scode" type="fjsd:setcustomerprojection_detail_in_scode_FGLString"/>
+          <element name="style" type="fjsd:setcustomerprojection_detail_in_style_FGLString"/>
+          <element name="yr" type="short"/>
+          <element name="mo" type="short"/>
+          <element name="units" type="short"/>
+          <element name="amount" type="fjsd:setcustomerprojection_detail_in_amount_FGLString"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfsetcustomerprojection_detail_in_setcustomerprojection_detail_in">
+        <complexContent>
+          <restriction base="soap-enc:Array">
+            <sequence>
+              <element maxOccurs="unbounded" minOccurs="0" name="item" type="fjsd:setcustomerprojection_detail_in"/>
+            </sequence>
+            <attribute ref="soap-enc:arrayType" wsdl:arrayType="fjsd:setcustomerprojection_detail_in[100]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <simpleType name="setcustomerprojection_errormsg_out_FGLString">
+        <restriction base="string">
+          <maxLength value="60"/>
+        </restriction>
+      </simpleType>
       <simpleType name="shoppingcart_rec_in_header_spcid_FGLString">
         <restriction base="string">
           <maxLength value="30"/>
@@ -2919,7 +5900,7 @@
     <part name="pwd" type="fjsd:accountlogin_pwd_in_FGLString"/>
   </message>
   <message name="accountloginResponse">
-    <part name="sts" type="xsd:short"/>
+    <part name="sts" type="xsd:int"/>
     <part name="errormsg" type="fjsd:accountlogin_errormsg_out_FGLString"/>
     <part name="ccode" type="fjsd:accountlogin_ccode_out_FGLString"/>
     <part name="email" type="fjsd:accountlogin_email_out_FGLString"/>
@@ -2939,11 +5920,25 @@
   <message name="atsResponse">
     <part name="rec" type="fjsd:ArrayOfats_rec_out_ats_rec_out"/>
   </message>
+  <message name="bulkats">
+    <part name="style" type="fjsd:bulkats_style_in_FGLString"/>
+    <part name="col" type="fjsd:bulkats_col_in_FGLString"/>
+    <part name="dm" type="fjsd:bulkats_dm_in_FGLString"/>
+    <part name="size" type="fjsd:bulkats_size_in_FGLString"/>
+    <part name="when" type="fjsd:bulkats_when_in_FGLString"/>
+    <part name="wcode" type="fjsd:bulkats_wcode_in_FGLString"/>
+    <part name="bordnum" type="xsd:int"/>
+    <part name="ccode" type="fjsd:bulkats_ccode_in_FGLString"/>
+    <part name="bulkonly" type="fjsd:bulkats_bulkonly_in_FGLString"/>
+  </message>
+  <message name="bulkatsResponse">
+    <part name="rec" type="fjsd:ArrayOfbulkats_rec_out_bulkats_rec_out"/>
+  </message>
   <message name="cancelorder">
     <part name="ordnum" type="xsd:int"/>
   </message>
   <message name="cancelorderResponse">
-    <part name="ret" type="xsd:short"/>
+    <part name="ret" type="xsd:int"/>
   </message>
   <message name="changepassword">
     <part name="ccode" type="fjsd:changepassword_ccode_in_FGLString"/>
@@ -2952,7 +5947,7 @@
     <part name="newpwd" type="fjsd:changepassword_newpwd_in_FGLString"/>
   </message>
   <message name="changepasswordResponse">
-    <part name="sts" type="xsd:short"/>
+    <part name="sts" type="xsd:int"/>
     <part name="errormsg" type="fjsd:changepassword_errormsg_out_FGLString"/>
   </message>
   <message name="checkout">
@@ -2960,7 +5955,7 @@
     <part name="ccode" type="fjsd:checkout_ccode_in_FGLString"/>
   </message>
   <message name="checkoutResponse">
-    <part name="sts" type="xsd:short"/>
+    <part name="sts" type="xsd:int"/>
     <part name="errormsg" type="fjsd:checkout_errormsg_out_FGLString"/>
     <part name="ordnum" type="xsd:int"/>
   </message>
@@ -2973,12 +5968,20 @@
   <message name="dealerResponse">
     <part name="rec" type="fjsd:ArrayOfdealer_rec_out_dealer_rec_out"/>
   </message>
+  <message name="entity">
+    <part name="rec" type="fjsd:entity_rec_in"/>
+  </message>
+  <message name="entityResponse">
+    <part name="sts" type="xsd:int"/>
+    <part name="errormsg" type="fjsd:entity_errormsg_out_FGLString"/>
+    <part name="ccode" type="fjsd:entity_ccode_out_FGLString"/>
+  </message>
   <message name="forgotpassword">
     <part name="ccode" type="fjsd:forgotpassword_ccode_in_FGLString"/>
     <part name="email" type="fjsd:forgotpassword_email_in_FGLString"/>
   </message>
   <message name="forgotpasswordResponse">
-    <part name="sts" type="xsd:short"/>
+    <part name="sts" type="xsd:int"/>
     <part name="errormsg" type="fjsd:forgotpassword_errormsg_out_FGLString"/>
     <part name="email" type="fjsd:forgotpassword_email_out_FGLString"/>
   </message>
@@ -2989,17 +5992,45 @@
   <message name="getaccountResponse">
     <part name="rec" type="fjsd:ArrayOfgetaccount_rec_out_getaccount_rec_out"/>
   </message>
+  <message name="getcustomerprojection">
+    <part name="salesman" type="fjsd:getcustomerprojection_salesman_in_FGLString"/>
+    <part name="ccode" type="fjsd:getcustomerprojection_ccode_in_FGLString"/>
+    <part name="cext" type="fjsd:getcustomerprojection_cext_in_FGLString"/>
+    <part name="gcode" type="fjsd:getcustomerprojection_gcode_in_FGLString"/>
+    <part name="scode" type="fjsd:getcustomerprojection_scode_in_FGLString"/>
+    <part name="style" type="fjsd:getcustomerprojection_style_in_FGLString"/>
+    <part name="yr" type="xsd:short"/>
+    <part name="mo" type="xsd:short"/>
+    <part name="currentpage" type="xsd:int"/>
+    <part name="viewcount" type="xsd:int"/>
+  </message>
+  <message name="getcustomerprojectionResponse">
+    <part name="header" type="fjsd:getcustomerprojection_header_out"/>
+    <part name="detail" type="fjsd:ArrayOfgetcustomerprojection_detail_out_getcustomerprojection_detail_out"/>
+  </message>
   <message name="getorderdetail">
     <part name="ordnum" type="xsd:int"/>
   </message>
   <message name="getorderdetailResponse">
     <part name="rec" type="fjsd:ArrayOfgetorderdetail_rec_out_getorderdetail_rec_out"/>
   </message>
+  <message name="getorderdetail2">
+    <part name="ordnum" type="xsd:int"/>
+  </message>
+  <message name="getorderdetail2Response">
+    <part name="rec" type="fjsd:ArrayOfgetorderdetail2_rec_out_getorderdetail2_rec_out"/>
+  </message>
   <message name="getorderheader">
     <part name="ordnum" type="xsd:int"/>
   </message>
   <message name="getorderheaderResponse">
     <part name="rec" type="fjsd:getorderheader_rec_out"/>
+  </message>
+  <message name="getorderheader2">
+    <part name="ordnum" type="xsd:int"/>
+  </message>
+  <message name="getorderheader2Response">
+    <part name="rec" type="fjsd:getorderheader2_rec_out"/>
   </message>
   <message name="getorders">
     <part name="ordnum" type="xsd:int"/>
@@ -3018,13 +6049,52 @@
     <part name="header" type="fjsd:getra_header_out"/>
     <part name="detail" type="fjsd:ArrayOfgetra_detail_out_getra_detail_out"/>
   </message>
+  <message name="getretailerwithsku">
+    <part name="division" type="fjsd:getretailerwithsku_division_in_FGLString"/>
+    <part name="season" type="fjsd:getretailerwithsku_season_in_FGLString"/>
+    <part name="group" type="fjsd:getretailerwithsku_group_in_FGLString"/>
+    <part name="category" type="fjsd:getretailerwithsku_category_in_FGLString"/>
+    <part name="itemtype" type="fjsd:getretailerwithsku_itemtype_in_FGLString"/>
+    <part name="ccode" type="fjsd:getretailerwithsku_ccode_in_FGLString"/>
+    <part name="custtype" type="fjsd:getretailerwithsku_custtype_in_FGLString"/>
+    <part name="custsubtype" type="fjsd:getretailerwithsku_custsubtype_in_FGLString"/>
+    <part name="sotype" type="fjsd:getretailerwithsku_sotype_in_FGLString"/>
+    <part name="style" type="fjsd:getretailerwithsku_style_in_FGLString"/>
+    <part name="col" type="fjsd:getretailerwithsku_col_in_FGLString"/>
+    <part name="query" type="fjsd:getretailerwithsku_query_in_FGLString"/>
+  </message>
+  <message name="getretailerwithskuResponse">
+    <part name="header" type="fjsd:getretailerwithsku_header_out"/>
+    <part name="retailer" type="fjsd:ArrayOfgetretailerwithsku_retailer_out_getretailerwithsku_retailer_out"/>
+  </message>
+  <message name="getsalesrep">
+    <part name="salesman" type="fjsd:getsalesrep_salesman_in_FGLString"/>
+    <part name="sotype" type="fjsd:getsalesrep_sotype_in_FGLString"/>
+    <part name="ccode" type="fjsd:getsalesrep_ccode_in_FGLString"/>
+    <part name="store" type="fjsd:getsalesrep_store_in_FGLString"/>
+    <part name="style" type="fjsd:getsalesrep_style_in_FGLString"/>
+    <part name="division" type="fjsd:getsalesrep_division_in_FGLString"/>
+    <part name="unitprice" type="fjsd:getsalesrep_unitprice_in_FGLDecimal"/>
+  </message>
+  <message name="getsalesrepResponse">
+    <part name="sts" type="xsd:int"/>
+    <part name="errormsg" type="fjsd:getsalesrep_errormsg_out_FGLString"/>
+    <part name="detail" type="fjsd:ArrayOfgetsalesrep_detail_out_getsalesrep_detail_out"/>
+  </message>
   <message name="getserialnumber">
     <part name="txtype" type="fjsd:getserialnumber_txtype_in_FGLString"/>
   </message>
   <message name="getserialnumberResponse">
-    <part name="sts" type="xsd:short"/>
+    <part name="sts" type="xsd:int"/>
     <part name="errormsg" type="fjsd:getserialnumber_errormsg_out_FGLString"/>
     <part name="sernum" type="xsd:int"/>
+  </message>
+  <message name="getsetuptable">
+    <part name="tablename" type="fjsd:ArrayOfgetsetuptable_tablename_in_getsetuptable_tablename_in"/>
+  </message>
+  <message name="getsetuptableResponse">
+    <part name="header" type="fjsd:getsetuptable_header_out"/>
+    <part name="detail" type="fjsd:ArrayOfgetsetuptable_detail_out_getsetuptable_detail_out"/>
   </message>
   <message name="getshoppingcart">
     <part name="rec" type="fjsd:getshoppingcart_rec_in"/>
@@ -3062,8 +6132,8 @@
     <part name="h1" type="fjsd:productgroup_h1_in_FGLString"/>
     <part name="h2" type="fjsd:productgroup_h2_in_FGLString"/>
     <part name="h3" type="fjsd:productgroup_h3_in_FGLString"/>
-    <part name="currentpage" type="xsd:short"/>
-    <part name="viewcount" type="xsd:short"/>
+    <part name="currentpage" type="xsd:int"/>
+    <part name="viewcount" type="xsd:int"/>
   </message>
   <message name="productgroupResponse">
     <part name="rec" type="fjsd:productgroup_rec_out"/>
@@ -3085,7 +6155,7 @@
     <part name="currency" type="fjsd:putaccount_currency_in_FGLString"/>
   </message>
   <message name="putaccountResponse">
-    <part name="ret" type="xsd:short"/>
+    <part name="ret" type="xsd:int"/>
     <part name="ccode" type="fjsd:putaccount_ccode_out_FGLString"/>
     <part name="cext" type="fjsd:putaccount_cext_out_FGLString"/>
   </message>
@@ -3110,7 +6180,7 @@
     <part name="action" type="fjsd:putentity_action_in_FGLString"/>
   </message>
   <message name="putentityResponse">
-    <part name="ret" type="xsd:short"/>
+    <part name="ret" type="xsd:int"/>
     <part name="ccode" type="fjsd:putentity_ccode_out_FGLString"/>
     <part name="cext" type="fjsd:putentity_cext_out_FGLString"/>
     <part name="company" type="fjsd:putentity_company_out_FGLString"/>
@@ -3143,8 +6213,65 @@
     <part name="action" type="fjsd:putwishlist_action_in_FGLString"/>
   </message>
   <message name="putwishlistResponse">
-    <part name="sts" type="xsd:short"/>
+    <part name="sts" type="xsd:int"/>
     <part name="errormsg" type="fjsd:putwishlist_errormsg_out_FGLString"/>
+  </message>
+  <message name="rptcustomerprojection">
+    <part name="salesman" type="fjsd:rptcustomerprojection_salesman_in_FGLString"/>
+    <part name="ccode" type="fjsd:rptcustomerprojection_ccode_in_FGLString"/>
+    <part name="cext" type="fjsd:rptcustomerprojection_cext_in_FGLString"/>
+    <part name="gcode" type="fjsd:rptcustomerprojection_gcode_in_FGLString"/>
+    <part name="scode" type="fjsd:rptcustomerprojection_scode_in_FGLString"/>
+    <part name="style" type="fjsd:rptcustomerprojection_style_in_FGLString"/>
+    <part name="yr" type="xsd:short"/>
+    <part name="mo" type="xsd:short"/>
+    <part name="filters" type="fjsd:ArrayOfrptcustomerprojection_filters_in_rptcustomerprojection_filters_in"/>
+  </message>
+  <message name="rptcustomerprojectionResponse">
+    <part name="header" type="fjsd:rptcustomerprojection_header_out"/>
+    <part name="detail" type="fjsd:ArrayOfrptcustomerprojection_detail_out_rptcustomerprojection_detail_out"/>
+    <part name="reporttotal" type="fjsd:rptcustomerprojection_reporttotal_out"/>
+    <part name="grouptotal" type="fjsd:ArrayOfrptcustomerprojection_grouptotal_out_rptcustomerprojection_grouptotal_out"/>
+  </message>
+  <message name="rptcustomerstatement">
+    <part name="salesman" type="fjsd:rptcustomerstatement_salesman_in_FGLString"/>
+    <part name="ccode" type="fjsd:rptcustomerstatement_ccode_in_FGLString"/>
+    <part name="division" type="fjsd:rptcustomerstatement_division_in_FGLString"/>
+    <part name="termscode" type="fjsd:rptcustomerstatement_termscode_in_FGLString"/>
+    <part name="ctype" type="fjsd:rptcustomerstatement_ctype_in_FGLString"/>
+  </message>
+  <message name="rptcustomerstatementResponse">
+    <part name="header" type="fjsd:rptcustomerstatement_header_out"/>
+    <part name="detail" type="fjsd:ArrayOfrptcustomerstatement_detail_out_rptcustomerstatement_detail_out"/>
+    <part name="reporttotal" type="fjsd:rptcustomerstatement_reporttotal_out"/>
+    <part name="grouptotal" type="fjsd:ArrayOfrptcustomerstatement_grouptotal_out_rptcustomerstatement_grouptotal_out"/>
+  </message>
+  <message name="rptsalesorderjournal">
+    <part name="salesrep" type="fjsd:rptsalesorderjournal_salesrep_in_FGLString"/>
+    <part name="ccode" type="fjsd:rptsalesorderjournal_ccode_in_FGLString"/>
+    <part name="ordnum" type="fjsd:rptsalesorderjournal_ordnum_in_FGLString"/>
+    <part name="sotype" type="fjsd:rptsalesorderjournal_sotype_in_FGLString"/>
+    <part name="ponum" type="fjsd:rptsalesorderjournal_ponum_in_FGLString"/>
+    <part name="division" type="fjsd:rptsalesorderjournal_division_in_FGLString"/>
+    <part name="ostatus" type="fjsd:rptsalesorderjournal_ostatus_in_FGLString"/>
+    <part name="style" type="fjsd:rptsalesorderjournal_style_in_FGLString"/>
+    <part name="styledesc" type="fjsd:rptsalesorderjournal_styledesc_in_FGLString"/>
+    <part name="orderdate" type="fjsd:rptsalesorderjournal_orderdate_in_FGLString"/>
+    <part name="startship" type="fjsd:rptsalesorderjournal_startship_in_FGLString"/>
+    <part name="cancel" type="fjsd:rptsalesorderjournal_cancel_in_FGLString"/>
+    <part name="requestdate" type="fjsd:rptsalesorderjournal_requestdate_in_FGLString"/>
+    <part name="h1" type="fjsd:rptsalesorderjournal_h1_in_FGLString"/>
+    <part name="h2" type="fjsd:rptsalesorderjournal_h2_in_FGLString"/>
+    <part name="h3" type="fjsd:rptsalesorderjournal_h3_in_FGLString"/>
+    <part name="groupby" type="fjsd:rptsalesorderjournal_groupby_in_FGLString"/>
+    <part name="sortby" type="fjsd:rptsalesorderjournal_sortby_in_FGLString"/>
+    <part name="sortorder" type="fjsd:rptsalesorderjournal_sortorder_in_FGLString"/>
+    <part name="reporttype" type="fjsd:rptsalesorderjournal_reporttype_in_FGLString"/>
+    <part name="filters" type="fjsd:ArrayOfrptsalesorderjournal_filters_in_rptsalesorderjournal_filters_in"/>
+  </message>
+  <message name="rptsalesorderjournalResponse">
+    <part name="header" type="fjsd:rptsalesorderjournal_header_out"/>
+    <part name="rec" type="fjsd:ArrayOfrptsalesorderjournal_rec_out_rptsalesorderjournal_rec_out"/>
   </message>
   <message name="search">
     <part name="terms" type="fjsd:search_terms_in_FGLString"/>
@@ -3155,6 +6282,13 @@
   </message>
   <message name="searchResponse">
     <part name="rec" type="fjsd:search_rec_out"/>
+  </message>
+  <message name="setcustomerprojection">
+    <part name="detail" type="fjsd:ArrayOfsetcustomerprojection_detail_in_setcustomerprojection_detail_in"/>
+  </message>
+  <message name="setcustomerprojectionResponse">
+    <part name="sts" type="xsd:int"/>
+    <part name="errormsg" type="fjsd:setcustomerprojection_errormsg_out_FGLString"/>
   </message>
   <message name="shoppingcart">
     <part name="rec" type="fjsd:shoppingcart_rec_in"/>
@@ -3211,8 +6345,8 @@
     <part name="currency" type="fjsd:styleinfo_currency_in_FGLString"/>
     <part name="when" type="fjsd:styleinfo_when_in_FGLString"/>
     <part name="atstype" type="fjsd:styleinfo_atstype_in_FGLString"/>
-    <part name="maxqty" type="xsd:short"/>
-    <part name="minqty" type="xsd:short"/>
+    <part name="maxqty" type="xsd:int"/>
+    <part name="minqty" type="xsd:int"/>
   </message>
   <message name="styleinfoResponse">
     <part name="rec" type="fjsd:ArrayOfstyleinfo_rec_out_styleinfo_rec_out"/>
@@ -3245,7 +6379,7 @@
     <part name="cvv2" type="fjsd:updatecart_cvv2_in_FGLString"/>
   </message>
   <message name="updatecartResponse">
-    <part name="sts" type="xsd:short"/>
+    <part name="sts" type="xsd:int"/>
     <part name="errormsg" type="fjsd:updatecart_errormsg_out_FGLString"/>
   </message>
   <portType name="b2cSoap">
@@ -3256,6 +6390,10 @@
     <operation name="ats">
       <input message="fjs:ats"/>
       <output message="fjs:atsResponse"/>
+    </operation>
+    <operation name="bulkats">
+      <input message="fjs:bulkats"/>
+      <output message="fjs:bulkatsResponse"/>
     </operation>
     <operation name="cancelorder">
       <input message="fjs:cancelorder"/>
@@ -3273,6 +6411,10 @@
       <input message="fjs:dealer"/>
       <output message="fjs:dealerResponse"/>
     </operation>
+    <operation name="entity">
+      <input message="fjs:entity"/>
+      <output message="fjs:entityResponse"/>
+    </operation>
     <operation name="forgotpassword">
       <input message="fjs:forgotpassword"/>
       <output message="fjs:forgotpasswordResponse"/>
@@ -3281,13 +6423,25 @@
       <input message="fjs:getaccount"/>
       <output message="fjs:getaccountResponse"/>
     </operation>
+    <operation name="getcustomerprojection">
+      <input message="fjs:getcustomerprojection"/>
+      <output message="fjs:getcustomerprojectionResponse"/>
+    </operation>
     <operation name="getorderdetail">
       <input message="fjs:getorderdetail"/>
       <output message="fjs:getorderdetailResponse"/>
     </operation>
+    <operation name="getorderdetail2">
+      <input message="fjs:getorderdetail2"/>
+      <output message="fjs:getorderdetail2Response"/>
+    </operation>
     <operation name="getorderheader">
       <input message="fjs:getorderheader"/>
       <output message="fjs:getorderheaderResponse"/>
+    </operation>
+    <operation name="getorderheader2">
+      <input message="fjs:getorderheader2"/>
+      <output message="fjs:getorderheader2Response"/>
     </operation>
     <operation name="getorders">
       <input message="fjs:getorders"/>
@@ -3297,9 +6451,21 @@
       <input message="fjs:getra"/>
       <output message="fjs:getraResponse"/>
     </operation>
+    <operation name="getretailerwithsku">
+      <input message="fjs:getretailerwithsku"/>
+      <output message="fjs:getretailerwithskuResponse"/>
+    </operation>
+    <operation name="getsalesrep">
+      <input message="fjs:getsalesrep"/>
+      <output message="fjs:getsalesrepResponse"/>
+    </operation>
     <operation name="getserialnumber">
       <input message="fjs:getserialnumber"/>
       <output message="fjs:getserialnumberResponse"/>
+    </operation>
+    <operation name="getsetuptable">
+      <input message="fjs:getsetuptable"/>
+      <output message="fjs:getsetuptableResponse"/>
     </operation>
     <operation name="getshoppingcart">
       <input message="fjs:getshoppingcart"/>
@@ -3341,9 +6507,25 @@
       <input message="fjs:putwishlist"/>
       <output message="fjs:putwishlistResponse"/>
     </operation>
+    <operation name="rptcustomerprojection">
+      <input message="fjs:rptcustomerprojection"/>
+      <output message="fjs:rptcustomerprojectionResponse"/>
+    </operation>
+    <operation name="rptcustomerstatement">
+      <input message="fjs:rptcustomerstatement"/>
+      <output message="fjs:rptcustomerstatementResponse"/>
+    </operation>
+    <operation name="rptsalesorderjournal">
+      <input message="fjs:rptsalesorderjournal"/>
+      <output message="fjs:rptsalesorderjournalResponse"/>
+    </operation>
     <operation name="search">
       <input message="fjs:search"/>
       <output message="fjs:searchResponse"/>
+    </operation>
+    <operation name="setcustomerprojection">
+      <input message="fjs:setcustomerprojection"/>
+      <output message="fjs:setcustomerprojectionResponse"/>
     </operation>
     <operation name="shoppingcart">
       <input message="fjs:shoppingcart"/>
@@ -3406,6 +6588,15 @@
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
       </output>
     </operation>
+    <operation name="bulkats">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
     <operation name="cancelorder">
       <soap:operation soapAction=""/>
       <input>
@@ -3442,6 +6633,15 @@
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
       </output>
     </operation>
+    <operation name="entity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
     <operation name="forgotpassword">
       <soap:operation soapAction=""/>
       <input>
@@ -3460,6 +6660,15 @@
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
       </output>
     </operation>
+    <operation name="getcustomerprojection">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
     <operation name="getorderdetail">
       <soap:operation soapAction=""/>
       <input>
@@ -3469,7 +6678,25 @@
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
       </output>
     </operation>
+    <operation name="getorderdetail2">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
     <operation name="getorderheader">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="getorderheader2">
       <soap:operation soapAction=""/>
       <input>
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
@@ -3496,7 +6723,34 @@
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
       </output>
     </operation>
+    <operation name="getretailerwithsku">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="getsalesrep">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
     <operation name="getserialnumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="getsetuptable">
       <soap:operation soapAction=""/>
       <input>
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
@@ -3571,10 +6825,10 @@
     <operation name="putorder">
       <soap:operation soapAction=""/>
       <input>
-        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://keen.logonsystems.com/b2c" use="encoded"/>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
       </input>
       <output>
-        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://keen.logonsystems.com/b2c" use="encoded"/>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
       </output>
     </operation>
     <operation name="putra">
@@ -3595,7 +6849,43 @@
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
       </output>
     </operation>
+    <operation name="rptcustomerprojection">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="rptcustomerstatement">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="rptsalesorderjournal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
     <operation name="search">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="setcustomerprojection">
       <soap:operation soapAction=""/>
       <input>
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://asp.logonsystems.com/b2c" use="encoded"/>
@@ -3697,7 +6987,7 @@
   </binding>
   <service name="b2c">
     <port binding="fjs:b2cBind" name="b2cSoap">
-      <soap:address location="http://asp.logonsystems.com:8095"/>
+      <soap:address location="http://asp.logonsystems.com:8099"/>
     </port>
   </service>
 </definitions>
