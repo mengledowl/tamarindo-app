@@ -3,7 +3,7 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  post :update_variant_quantity, to: 'callbacks#update_variant_quantity'
+  post 'logon/update_variant_quantity', to: 'logon_callbacks#update_variant_quantity'
 
   resources :logon_ats, only: :show
 

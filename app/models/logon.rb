@@ -1,7 +1,12 @@
 module Logon
   class << self
-    def get_ats(style)
-      response = client.call(:ats, message: { style: style })
+    def get_ats(style:, col:, dm:, size:)
+      response = client.call(:ats, message: {
+          style: style,
+          col: col,
+          dm: dm,
+          size: size
+      })
 
       Logon::Ats.new(data: response.body, style: style)
     end
