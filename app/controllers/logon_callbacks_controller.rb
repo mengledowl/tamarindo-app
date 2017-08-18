@@ -4,7 +4,12 @@ class LogonCallbacksController < ApplicationController
   def update_variant_quantity
     variant = Variant.where(logon_style: params[:style], logon_col: params[:col], logon_dm: params[:dm], logon_size: params[:size]).first
 
-    head 404 and return unless variant
+    render json: {
+        error: {
+            code: 'variant_not_found',
+            message: 'No matching variant has been found for the SKU details that were passed in the body'
+        }
+    }, status: 404 and return unless variant
 
     UpdateVariantQuantityWorker.perform_async(variant.id)
 
