@@ -15,6 +15,10 @@ module Logon
       client.call(:putorder, xml: putorder_xml(details))
     end
 
+    def cancel_order(ordnum)
+      client.call(:cancelorder, message: { ordnum: ordnum })
+    end
+
     def client
       @client ||= Savon.client(wsdl: Rails.root.join('vendor', 'logon', 'logon_wsdl.xml'),
                                proxy: ENV['FIXIE_URL'], endpoint: ENV['LOGON_ENDPOINT'], log: true,

@@ -3,12 +3,12 @@ require 'sidekiq/testing'
 Sidekiq::Testing.fake!
 
 describe ShopifyWebhookController do
+  before do
+    allow_any_instance_of(described_class).to receive(:verify_webhook).and_return(true)
+  end
+
   describe 'POST order_created' do
     subject { post :order_created, params: { id: 1 } }
-
-    before do
-      allow_any_instance_of(described_class).to receive(:verify_webhook).and_return(true)
-    end
 
     context 'order has already been processed before' do
       before do
@@ -46,6 +46,22 @@ describe ShopifyWebhookController do
       end
     end
 
+    describe 'POST order_cancelled' do
+      subject { post :order_cancelled, params: { id: 1 } }
 
+      before do
+        OrderEvent.create(shopify_order_id: 1)
+      end
+
+      it 'should queue a ProcessOrderCancellationWorker' do
+        expect { subject }.to change { ProcessOrderCancellationWorker.jobs.size }.by(1)
+      end
+
+      it 'should return a 200' do
+        subject
+
+        expect(response.status).to eq 200
+      end
+    end
   end
 end

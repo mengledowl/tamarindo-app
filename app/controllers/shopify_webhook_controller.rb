@@ -11,6 +11,14 @@ class ShopifyWebhookController < ApplicationController
     head 200
   end
 
+  def order_cancelled
+    order_event = OrderEvent.find_by(shopify_order_id: params[:id])
+
+    ProcessOrderCancellationWorker.perform_async(order_event.id)
+
+    head 200
+  end
+
   private
 
   def verify_webhook
