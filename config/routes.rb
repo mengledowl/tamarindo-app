@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :logon_ats, only: :show
 
   post :shopify_order_created, to: 'shopify_webhook#order_created'
+  post :shopify_order_cancelled, to: 'shopify_webhook#order_cancelled'
 
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
     ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username), ::Digest::SHA256.hexdigest(ENV['SIDEKIQ_USERNAME'])) &
