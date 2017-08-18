@@ -11,7 +11,7 @@ describe ProcessOrderCancellationWorker do
           envelope: {
               body: {
                   cancelorder_response: {
-                      ret: 0
+                      ret: '0'
                   }
               }
           }
@@ -19,7 +19,7 @@ describe ProcessOrderCancellationWorker do
     }
 
     before do
-      allow(Logon).to receive(:cancel_order).and_return(OpenStruct.new(hash: hash))
+      allow(Logon).to receive(:cancel_order).and_return(double(:response, hash: hash))
     end
 
     it 'should set the order event to cancelled' do
