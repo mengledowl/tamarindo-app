@@ -40,6 +40,15 @@ describe LogonCallbacksController do
 
         it { expect(subject.status).to eq 404 }
         it { expect { subject }.to change { UpdateVariantQuantityWorker.jobs.size }.by(0) }
+
+        it 'should return the error details in JSON' do
+          subject
+
+          body = JSON.parse(response.body)
+
+          expect(body['error']['code']).to eq 'variant_not_found'
+          expect(body['error']['message']).not_to be_empty
+        end
       end
 
       context 'when we can find the variant in question' do
